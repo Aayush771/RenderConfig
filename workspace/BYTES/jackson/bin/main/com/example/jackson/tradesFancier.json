@@ -1,0 +1,14 @@
+[
+    {
+      "1. symbol": "AAPL",
+      "2. quantity": 100,
+      "3. purchaseDate": "2019-01-02",
+      "4. rainyDay": true
+    },
+    {
+      "1. symbol": "MSFT",
+      "2. quantity": 10,
+      "3. purchaseDate": "2019-01-02",
+      "4. rainyDay": false
+    }
+  ]

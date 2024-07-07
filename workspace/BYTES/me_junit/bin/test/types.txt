@@ -1,0 +1,4 @@
+vehicle
+furniture
+house
+electronics

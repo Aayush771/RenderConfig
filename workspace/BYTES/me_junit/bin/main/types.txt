@@ -1,0 +1,5 @@
+vehicle
+furniture
+house
+electronics
+toy

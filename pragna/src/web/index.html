@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .dashboard-item {
+            margin-bottom: 20px;
+        }
+        .dashboard-item label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <div class="dashboard-item">
+        <label>No. of Queries:</label>
+        <span id="noOfQueries"></span>
+    </div>
+
+    <div class="dashboard-item">
+        <label>Overall Quality:</label>
+        <span id="overallQuality"></span>
+    </div>
+
+    <div class="dashboard-item">
+        <h2>Inline Suggestions</h2>
+        <ul id="inlineSuggestions"></ul>
+    </div>
+
+    <div class="dashboard-item">
+        <h2>CheckStyle</h2>
+        <ul id="checkStyle"></ul>
+    </div>
+
+    <div class="dashboard-item">
+        <h2>Summary</h2>
+        <p><strong>Strength:</strong> <span id="strength"></span></p>
+        <p><strong>Scope for Improvement:</strong> <span id="scopeForImprovement"></span></p>
+    </div>
+
+    <script>
+        function displayDashboard(responseData) {
+            // Update DOM with fetched data
+            document.getElementById('noOfQueries').textContent = responseData.status.noOfQueries;
+            document.getElementById('overallQuality').textContent = responseData.status.overallQuality;
+            
+            // Populate inline suggestions
+            const inlineSuggestions = document.getElementById('inlineSuggestions');
+            responseData.inlineSuggestion.forEach(suggestion => {
+                const li = document.createElement('li');
+                li.textContent = `Line ${suggestion.lineNumber}: ${suggestion.text}`;
+                inlineSuggestions.appendChild(li);
+            });
+
+            // Populate CheckStyle checkboxes
+            const checkStyle = document.getElementById('checkStyle');
+            responseData.checkStyle.checkboxes.forEach((isChecked, index) => {
+                const li = document.createElement('li');
+                li.textContent = `Checkbox ${index + 1}: ${isChecked ? 'Checked' : 'Unchecked'}`;
+                checkStyle.appendChild(li);
+            });
+
+            // Update Summary
+            document.getElementById('strength').textContent = responseData.summary.strength;
+            document.getElementById('scopeForImprovement').textContent = responseData.summary.scopeForImprovement;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const responseData = JSON.parse(decodeURIComponent(urlParams.get('responseData')));
+            if (responseData) {
+                displayDashboard(responseData);
+            } else {
+                console.error('No response data found.');
+                alert('No response data found. Please check console for details.');
+            }
+        });
+    </script>
+</body>
+</html>
