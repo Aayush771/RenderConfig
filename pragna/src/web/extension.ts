@@ -38,7 +38,7 @@ async function fetchDashboard(
   try {
     const API_KEY = "AIzaSyCSlMKjenTjUT2o6Jb0Rz9XbMF2SXhKZt0";
     // const url =
-    // "https://renderconfig-jjux.onrender.com//fetchDashboard?key=" + API_KEY;
+    //   "https://renderconfig-jjux.onrender.com//fetchDashboard?key=" + API_KEY;
     const url =
       "https://c20658fa-f153-4500-abf9-271667b6ec33.mock.pstmn.io/fetchDashboard?key=" +
       API_KEY;
@@ -208,14 +208,15 @@ function getWebViewContent(responseData: any) {
           --list-item-background-color: #F2F62E;
         }
         .dark-mode {
-          --background-color: #212121;
-          --text-color: #E0E0E0;
-          --primary-color: #BBE0FE;
-          --secondary-color: #43A418;
-          --accent-color: #FFEAB2;
-          --item-background-color: #424242;
-          --list-item-background-color: #616161;
-        }
+  --background-color: #212121;
+  --text-color: #FFFFFF; /* Brighter text color for dark mode */
+  --primary-color: #BBE0FE;
+  --secondary-color: #43A418;
+  --accent-color: #FFEAB2;
+  --item-background-color: #424242;
+  --list-item-background-color: #121212; /* Darker grey highlight */
+}
+
         .dashboard-item ul li {
           background: #E0E0E0; /* Soft grey background */
         }
