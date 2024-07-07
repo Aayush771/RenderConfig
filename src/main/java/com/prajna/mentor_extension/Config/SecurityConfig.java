@@ -56,7 +56,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/swagger-ui*/**", "/v3/api-docs/**").permitAll()
-                        .requestMatchers("/register", "/login", "error", "/authuser").permitAll()
+                        .requestMatchers("/register", "/login", "error", "/authuser","/fetchDashboard").permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .build();
