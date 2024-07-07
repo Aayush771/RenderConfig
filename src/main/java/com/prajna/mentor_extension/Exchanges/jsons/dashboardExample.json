@@ -1,0 +1,48 @@
+{
+  "status": {
+    "noOfQueries": 12,
+    "inlineCompletions": 18,
+    "overallQuality": 75
+  },
+  "inlineSuggestion": [
+    {
+      "lineNumber": 15,
+      "text": "Consider using a loop for better code readability and efficiency."
+    },
+    {
+      "lineNumber": 28,
+      "text": "Maybe refactor this section for better organization."
+    }
+  ],
+  "checkStyle": {
+    "checkboxes": [
+      false,
+      true,
+      true,
+      true,
+      false,
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "occuranceLineNumbers": [
+      [10, 15],
+      [],
+      [],
+      [],
+      [20, 25],
+      [],
+      [30, 35],
+      [],
+      [],
+      [40, 45]
+    ],
+    "Score": 6
+  },
+  "summary": {
+    "strength": "Good code structure and cohesion.",
+    "scopeForImprovement": "Improve code reusability and consider better commenting practices."
+  }
+}

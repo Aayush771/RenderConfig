@@ -1,0 +1,29 @@
+from user_preference import update_user_language, update_user_country
+
+
+def recover_chat_backup_ios(username):
+    print ('Recovering chat from backup')
+    # iOS specific code
+    # ...
+    # iOS specific code
+
+
+def backup_chat_ios(username, chat):
+    print ('Store chat to backup')
+    # iOS specific code
+    # ...
+    # iOS specific code
+
+def change_user_country_ios(username, country):
+    # Some iOS specific code goes here.
+    # iOS specific code
+    # ...
+    # iOS specific code
+    update_user_country(username, country)
+
+def change_user_language_ios(username, language):
+    # Some iOS specific code goes here.
+    # iOS specific code
+    # ...
+    # iOS specific code
+    update_user_language(username, language)

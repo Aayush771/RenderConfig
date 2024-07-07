@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.0-M3'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.crio'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework:spring-web"
+    compile "com.fasterxml.jackson.core:jackson-databind"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootRun {
+    if (project.hasProperty('args')) {
+        args project.args.split(',')
+    }
+}
+
+// Helps faster load times in Crio workspace.
+allprojects {
+    buildDir = '/tmp/external_build'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging.events ("STANDARD_ERROR")
+    testLogging.events ("STANDARD_OUT")
+}

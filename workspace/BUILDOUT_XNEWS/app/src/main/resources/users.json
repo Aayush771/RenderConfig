@@ -1,0 +1,23 @@
+[
+    {
+      "name": "Abdul",
+      "query": "Apple"
+    },
+    {
+      "name": "Simran",
+      "query": "Amazon",
+      "language": "es"
+    },
+    {
+      "name": "Alice",
+      "query": "NASA",
+      "language": "fr",
+      "sortBy": "popularity"
+    },
+    {
+      "name": "Bob",
+      "query": "Walmart",
+      "language": "de",
+      "sortBy": "relevancy"
+    }
+]

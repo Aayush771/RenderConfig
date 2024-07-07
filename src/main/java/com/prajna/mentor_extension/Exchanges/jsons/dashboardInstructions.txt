@@ -1,0 +1,50 @@
+{
+  
+  "status": {
+    "noOfQueries": "fill this with integer 1",
+    "inlineCompletions": "fill this with integer sizeOf array inlineSuggestion",
+    "overallQuality": "fill this with integer Score*10"
+  },
+
+  "inlineSuggestion": [ //this is array of all suggestions individually
+    {
+      "lineNumber": integer, Replace with line number for the suggestion in the user code, count line number = 1 from package, +1 for every newline
+      "text": String, fill with the code suggestion for the user code at that line with comparision to solution code, only give an idea of what can be done to remove issues or errors, dont provide solution code 
+    },
+    // Add all suggesstions as array
+  ],
+
+  "checkStyle": {
+    "checkboxes": [//if violation of rule, its false else if rule followed then its true
+      null,   (Code Reusability)
+      null,   (hiding Secrets and private variables)
+      null,   (file code Structure)
+      null,   (Standard Naming Conventions)
+      null,   (Industrial Comments Structure)
+      null,   (Cohesion of well defined functionality)
+      null,   (Loose Coupling)
+      null,   (Simplicity of code)
+      null,   (Encapsulation)
+      null,   (No Dead or unused Code)
+    ],
+
+    "occuranceLineNumbers": [// each array is array of line for occurance of violations in checkboxes
+      [],    // Code Reusability
+      [],    // Secrets
+      [],    // file code Structure
+      [],    // Naming Conventions
+      [],    // Comments
+      [],    // Cohesion
+      [],    // Loose Coupling
+      [],    // Over Complexity
+      [],    // Encapsulation
+      [],    // Dead Code
+    ],
+    "Score": integer score = number of true in "checkboxes"
+  },
+
+  "summary": {
+    "strength": null,  // Replace with identified code strengths,give in bullet points
+    "scopeForImprovement": null // Replace with identified areas for improvement, give in bullet points
+  }
+}
