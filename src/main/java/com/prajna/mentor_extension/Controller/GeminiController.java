@@ -41,7 +41,7 @@ public class GeminiController {
     public ResponseEntity<Dashboard> setText(@RequestBody FileFormat fileFormat, @RequestParam String API_KEY)
             throws NoSuchAlgorithmException, IOException {
 
-        Users presentUser = authUserDetails.getCurrentUser();
+      //  Users presentUser = authUserDetails.getCurrentUser();
         ResponseEntity<Dashboard> serviceResponse= geminiService.getDashboard(fileFormat, API_KEY);;
         // if (getSHA256Hash(fileFormat.getContent()) != presentUser.getPresentQueryHash()) {
             // presentUser.setPresentQueryHash(getSHA256Hash(fileFormat.getContent()));
