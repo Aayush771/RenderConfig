@@ -1,0 +1,8 @@
+{
+    "/fetchDashboard": {
+      "response": {
+            "body": {
+                "text": "Hello World!"}
+            }
+    }
+  }
